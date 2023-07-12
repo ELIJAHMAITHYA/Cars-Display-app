@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Art Work App</string>
+    <string name="bmw">Model: 2023 BMW 7 Series. Compare Model. Positives. Spacious and comfortable cabin. ...</string>
+    <string name="mercedes">Model: Mercedes-Benz GLC 2023. Rs60 Lakh* Expected Price. Expected Launch Aug 20, 2023. ...</string>
+    <string name="royce">"Model: Rolls-Royce Phantom price (Rs. 8.99 - 10.48 Cr)"</string>
+    <string name="tesla">Model: 2023 Tesla Model Y.</string>
+    <string name="audi">Model: Audi R8 Coupe/Spyder</string>
+</resources>
