@@ -47,12 +47,23 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+//                    Column {
+//                    AppTitle()
                     cars()
+                    //}
                 }
             }
         }
     }
 }
+
+//@Composable
+//fun AppTitle() {
+//    Text(
+//        text = "ArtWork App",
+//        modifier = Modifier.padding(16.dp)
+//    )
+//}
 
 @Composable
 fun cars() {
@@ -67,7 +78,7 @@ fun cars() {
         when (index) {
             1 -> {
                 content(
-                    painter = R.drawable.audi2,
+                    painter = R.drawable.audi22,
                     contentDescription = null,
                     name = "Audi ",
                     description = R.string.audi
@@ -136,7 +147,7 @@ fun cars() {
                     "next",
                     onClick = {
                         index++
-                        if (index > 4) {
+                        if (index > 5) {
                             index = 1
                         }
 
