@@ -67,7 +67,7 @@ fun cars() {
         when (index) {
             1 -> {
                 content(
-                    painter = R.drawable.audi,
+                    painter = R.drawable.audi2,
                     contentDescription = null,
                     name = "Audi ",
                     description = R.string.audi
@@ -88,7 +88,7 @@ fun cars() {
                     painter = R.drawable.mercedes,
                     contentDescription = null,
                     name = "Mercedes Benz",
-                    description = R.string.mercedes
+                    description = R.string.mercedes,
                 )
             }
 
@@ -123,8 +123,9 @@ fun cars() {
                     onClick = {
                         index--
                         if (index < 1) {
-                            index = 1
+                            index = 5
                         }
+
 
                     })
             }
@@ -135,7 +136,7 @@ fun cars() {
                     "next",
                     onClick = {
                         index++
-                        if (index > 5) {
+                        if (index > 4) {
                             index = 1
                         }
 
