@@ -7,8 +7,10 @@ import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -68,97 +70,113 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun cars() {
     var index by remember { mutableStateOf(1) }
-    Column(
+    var colours by remember {
+        mutableStateOf(Color.Cyan)
+    }
+    Box(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(32.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
+            .background(colours)
     ) {
-        when (index) {
-            1 -> {
-                content(
-                    painter = R.drawable.audi22,
-                    contentDescription = null,
-                    name = "Audi ",
-                    description = R.string.audi
-                )
-            }
 
-            2 -> {
-                content(
-                    painter = R.drawable.bmw,
-                    contentDescription = null,
-                    name = " BMW",
-                    description = R.string.bmw
-                )
-            }
 
-            3 -> {
-                content(
-                    painter = R.drawable.mercedes,
-                    contentDescription = null,
-                    name = "Mercedes Benz",
-                    description = R.string.mercedes,
-                )
-            }
-
-            4 -> {
-                content(
-                    painter = R.drawable.royce,
-                    contentDescription = null,
-                    name = "Rolls Royce",
-                    description = R.string.royce
-                )
-            }
-
-            5 -> {
-                content(
-                    painter = R.drawable.tesla,
-                    contentDescription = null,
-                    name = "Tesla ",
-                    description = R.string.tesla
-                )
-            }
-        }
-        Row(
+        Column(
             modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+                .fillMaxSize()
+                .padding(32.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
         ) {
-            Row(
-                horizontalArrangement = Arrangement.Start
-            ) {
-                ButtonFunction(
-                    "Previous",
-                    onClick = {
-                        index--
-                        if (index < 1) {
-                            index = 5
-                        }
+            when (index) {
+                1 -> {
+                    colours= Color.Blue
+                    content(
+                        painter = R.drawable.audi22,
+                        contentDescription = null,
+                        name = "Audi ",
+                        description = R.string.audi
 
+                    )
+                }
 
-                    })
+                2 -> {
+                    colours= Color.Yellow
+                    content(
+                        painter = R.drawable.bmw,
+                        contentDescription = null,
+                        name = " BMW",
+                        description = R.string.bmw
+                    )
+                }
+
+                3 -> {
+
+                    content(
+                        painter = R.drawable.mercedes,
+                        contentDescription = null,
+                        name = "Mercedes Benz",
+                        description = R.string.mercedes,
+                    )
+                }
+
+                4 -> {
+
+                    content(
+                        painter = R.drawable.royce,
+                        contentDescription = null,
+                        name = "Rolls Royce",
+                        description = R.string.royce
+                    )
+                }
+
+                5 -> {
+
+                    content(
+                        painter = R.drawable.tesla,
+                        contentDescription = null,
+                        name = "Tesla ",
+                        description = R.string.tesla
+                    )
+                }
             }
             Row(
-                horizontalArrangement = Arrangement.End,
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                ButtonFunction(
-                    "next",
-                    onClick = {
-                        index++
-                        if (index > 5) {
-                            index = 1
-                        }
+                Row(
+                    horizontalArrangement = Arrangement.Start
+                ) {
+                    ButtonFunction(
+                        "Previous",
+                        onClick = {
+                            index--
+                            if (index < 1) {
+                                index = 5
+                            }
 
-                    })
+
+                        })
+                }
+                Row(
+                    horizontalArrangement = Arrangement.End,
+                ) {
+                    ButtonFunction(
+                        "next",
+                        onClick = {
+                            index++
+                            if (index > 5) {
+                                index = 1
+                            }
+
+                        })
+
+                }
 
             }
 
         }
 
     }
-
 }
 
 @Composable
